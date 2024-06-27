@@ -1,0 +1,9 @@
+
+=====================CRUD=================
+
+C => INSERT INTO results (name,roll,subject,marks,grade) VALUES ('Purba','1','English','90','A+');
+R => SELECT * FROM results / SELECT * FROM results WHERE id=1;
+U => UPDATE results SET name="Purba", roll="1", subject="English", marks="90", grade="A+"; 
+D => DELETE FROM results WHERE id=1;
+
+connection = new mysql ('server','user','password','database_name');
