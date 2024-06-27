@@ -2,6 +2,28 @@
 
 include 'config.php';
 
+if(isset($_POST['submit'])){
+
+  $name    = $_POST['name'];
+  $roll    = $_POST['roll'];
+  $subject = $_POST['subject'];
+  $marks   = $_POST['marks'];
+  $grade   = $_POST['grade'];
+
+  $query = "INSERT INTO results (name,roll,subject,marks,grade) VALUES ('$name','$roll','$subject','$marks','$grade')";
+  $createData = mysqli_query($connection, $query);
+
+if($createData){
+  // echo 'Create the Data';
+  header('location:index.php');
+
+}
+else{
+  echo 'Failed to create data';
+}
+
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,7 +58,7 @@ include 'config.php';
 </section>
 
 <section class="container mt-5">
-<form>
+<form action="" method="post">
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" name="name" id="name" required>

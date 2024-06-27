@@ -56,18 +56,20 @@ include 'config.php';
 
     if($results){
 
+      $serialNumber = 1;
+
         while($row = mysqli_fetch_assoc($results)){
 
-            $id = $row['id'];
-            $name = $row['name'];
-            $roll = $row['roll'];
+            $id      = $row['id'];
+            $name    = $row['name'];
+            $roll    = $row['roll'];
             $subject = $row['subject'];
-            $marks = $row['marks'];
-            $grade = $row['grade'];
+            $marks   = $row['marks'];
+            $grade   = $row['grade'];
 
             echo
             '<tr>
-            <th scope="row">'.$id.'</th>
+            <th scope="row">'.$serialNumber.'</th>
             <td>'.$name.'</td>
             <td>'.$roll.'</td>
             <td>'.$subject.'</td>
@@ -75,9 +77,11 @@ include 'config.php';
             <td>'.$grade.'</td>
             <td>
             <a href="#" class="btn btn-success">Edit</a>
-            <a href="#" class="btn btn-danger">Delete</a>
+            <a href="delete.php?id='.$id.'" class="btn btn-danger">Delete</a>
             </td>
             </tr>';
+
+            $serialNumber++;
         }
     }
  
