@@ -35,7 +35,7 @@ include 'config.php';
   </nav>
 </section>
 
-<section class="mt-5">
+<section class=" container mt-5">
  <table class="table">
   <thead>
     <tr>
@@ -76,7 +76,7 @@ include 'config.php';
             <td>'.$marks.'</td>
             <td>'.$grade.'</td>
             <td>
-            <a href="#" class="btn btn-success">Edit</a>
+            <a href="edit.php?id='.$id.'" class="btn btn-success">Edit</a>
             <a href="delete.php?id='.$id.'" class="btn btn-danger">Delete</a>
             </td>
             </tr>';
